@@ -17,6 +17,7 @@ class CreateTaglinesTable extends Migration
             $table->id();
             $table->foreignId('service_id')->nullable()->index('fk_tagline_to_service');
             $table->string('tagline')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
