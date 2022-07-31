@@ -11,6 +11,8 @@ class ExperienceUser extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $table = 'experience_users';
+
     protected $fillable = [
         'detail_user_id',
         'role'

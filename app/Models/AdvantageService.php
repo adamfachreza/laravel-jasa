@@ -11,6 +11,8 @@ class AdvantageService extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $table = 'advantage_services';
+
     protected $fillable = [
         'service_id','advantage'
     ];

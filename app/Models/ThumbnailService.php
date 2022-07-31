@@ -11,6 +11,8 @@ class ThumbnailService extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $table = 'thumbnail_services';
+
     protected $fillable = [
         'thumbnail',
         'service_id'

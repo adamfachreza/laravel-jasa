@@ -11,6 +11,8 @@ class Tagline extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $table = 'taglines';
+
     protected $fillable = [
         'tagline','service_id'
     ];

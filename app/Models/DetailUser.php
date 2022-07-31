@@ -11,6 +11,8 @@ class DetailUser extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $table = 'detail_users';
+
     protected $fillable = [
         'service_id',
         'advantage'
