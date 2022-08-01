@@ -21,4 +21,27 @@ class Order extends Model
     protected $dates = [
         'deleted_id','updated_id','created_at'
     ];
+
+    public function buyer_id()
+    {
+        return $this->belongsTo(User::class, 'buyer_id','id');
+    }
+
+    public function freelancer_id()
+    {
+        return $this->belongsTo(User::class, 'freelancer_id','id');
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id','id');
+    }
+
+    public function order()
+    {
+        return $this->belongsTo(OrderStatus::class, 'order_status_id','id');
+    }
 }
+
+
+

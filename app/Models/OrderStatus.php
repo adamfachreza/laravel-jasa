@@ -22,4 +22,9 @@ class OrderStatus extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function order_status()
+    {
+        return $this->belongsTo(Order::class,'order_status_id','id');
+    }
 }

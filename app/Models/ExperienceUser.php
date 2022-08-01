@@ -21,4 +21,9 @@ class ExperienceUser extends Model
     protected $dates = [
         'deleted_at','created_at','updated_at'
     ];
+
+    public function detail_user()
+    {
+        return $this->belongsTo(DetailUser::class, 'detail_user_id', 'id');
+    }
 }

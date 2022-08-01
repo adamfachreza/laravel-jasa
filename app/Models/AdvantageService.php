@@ -20,4 +20,10 @@ class AdvantageService extends Model
     protected $dates = [
         'deleted_at','created_at','updated_at'
     ];
+
+    public function service()
+    {
+        return $this->belongsTo(Services::class, 'service_id','id');
+    }
+
 }

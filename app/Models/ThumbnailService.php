@@ -24,4 +24,9 @@ class ThumbnailService extends Model
         'updated_at',
     ];
 
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id','id');
+    }
+
 }
