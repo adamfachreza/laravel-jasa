@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\landing;
+namespace App\Http\Controllers\Landing;
 
 use App\Http\Controllers\Controller;
 use App\Models\AdvantageService;
@@ -92,6 +92,13 @@ class LandingController extends Controller
         return abort(404);
     }
 
+    public function explore()
+    {
+        $services = Service::orderBy('created_at','desc')->get();
+
+        return view('pages.landing.explore', compact('services'));
+    }
+
     public function detail($id)
     {
         $service = Service::where('id', $id)->first();
@@ -112,7 +119,7 @@ class LandingController extends Controller
         // validation booking
         if($service->users_id == $user_buyer)
         {
-            toast()->warning('Sorry, Member Cannot Book Theri Own Service');
+            // toast()->warning('Sorry, Member Cannot Book There Own Service');
             return back();
         }
 
