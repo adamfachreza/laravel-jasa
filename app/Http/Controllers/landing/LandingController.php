@@ -11,6 +11,7 @@ use App\Models\Tagline;
 use App\Models\ThumbnailService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LandingController extends Controller
 {
@@ -120,6 +121,7 @@ class LandingController extends Controller
         if($service->users_id == $user_buyer)
         {
             // toast()->warning('Sorry, Member Cannot Book There Own Service');
+            Alert::warning('Sorry, Member Cannot Book There Own Service', 'warning');
             return back();
         }
 
